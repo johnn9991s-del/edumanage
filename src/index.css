@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sidebar-width: 260px;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900;
+}
+
+.app-layout {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  grid-template-rows: 56px 1fr;
+  grid-template-areas:
+    'sidebar topbar'
+    'sidebar content';
+  height: 100vh;
+}
+
+.app-sidebar { grid-area: sidebar; }
+.app-topbar { grid-area: topbar; }
+.app-content { grid-area: content; }
+
